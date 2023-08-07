@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>tegBot</title>
+  <title>Document</title>
 </head>
 <style>
 body {
@@ -21,7 +21,7 @@ body {
 
 .inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 200px 200px 200px;
 }
 
@@ -58,24 +58,23 @@ body {
   text-align: center;
 }
 
-.notification {
-  /* New styles for the notification */
-  position: absolute;
-  top: 0;
-  right: 15px;
-  background-color: red;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 50%;
-  font-size: 14px;
-  display: none; /* Hide the notification initially */
-}
+ .notification {
+      position: absolute;
+      top: 0;
+      right: 15px;
+      background-color: red;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 50%;
+      font-size: 14px;
+      display: none;
+    }
 .remove-btn {
   display: none;
 }
  .item-price {
     position: absolute;
-    top: 50%; /* Center the price vertically */
+    top: 20%; /* Center the price vertically */
     left: 50%; /* Center the price horizontally */
     transform: translate(-50%, -50%); /* Center the price precisely */
     color: #fff;
@@ -92,7 +91,7 @@ body {
     <div class="inner">
       <div class="item">
         <span class="item-price" id="item-price1">Price: $15</span> <!-- Updated price -->
-        <img src="https://pics.clipartpng.com/Pizza_PNG_Clipart-572.png" alt="" class="img">
+        <img src="https://freepngimg.com/thumb/food/139065-food-plate-fish-free-download-png-hq-thumb.png" alt="" class="img">
         <button class="btn" id="btn1">Add</button>
                 <button class="btn remove-btn" id="removeBtn1">-</button>
                 <span class="notification" id="notification1"></span>
