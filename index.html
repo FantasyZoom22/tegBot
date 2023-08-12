@@ -139,8 +139,8 @@ body {
 
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <script>
-    let tg = window.Telegram.WebApp;
 
+let tg = window.Telegram.WebApp;
 tg.expand();
 
 tg.MainButton.textColor = '#FFFFFF';
@@ -397,9 +397,9 @@ removeBtn6.addEventListener("click", function(){
 
 
 
-Telegram.WebApp.onEvent("mainButtonClicked", function(){
-  tg.sendData({ item: item, quantity: quantities[item] }); // Send both item and quantity data to Telegram
-});
+// Telegram.WebApp.onEvent("mainButtonClicked", function(){
+//   tg.sendData({ item: item, quantity: quantities[item] }); // Send both item and quantity data to Telegram
+// });
 
 function updateNotification(itemId) {
   let notification = document.getElementById(`notification${itemId}`); // Get the notification span for the corresponding item
@@ -418,6 +418,18 @@ let p = document.createElement("p");
 p.innerText = `${tg.initDataUnsafe.user.first_name} ${tg.initDataUnsafe.user.last_name}`;
 
 usercard.appendChild(p);
+
+    //initialize the "save" button
+  const mainButton = window.Telegram.WebApp.MainButton;
+  mainButton.text = "Save Preferences";
+  mainButton.enable();
+  mainButton.show();
+  // and make it send the "foods" object (as JSON string) back to the backend
+  mainButton.onClick(function(){
+    window.Telegram.WebApp.sendData(JSON.stringify(foods));
+  })
+});
+    
     </script>
 </body>
 </html>
